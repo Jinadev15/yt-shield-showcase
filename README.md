@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">YT Shield</h1>
-<p align="center"><b>A quiet YouTube ad remover that YouTube doesn't notice, on laptop and phone.</b></p>
+<p align="center"><b>A quiet ad remover for YouTube and Spotify that the sites don't notice.</b></p>
 
 > **Showcase repository.** This page describes the project and shows it working. The source
 > code is kept private and is not published here.
@@ -31,11 +31,23 @@ it could detect.
 | **Warning removal** | If the anti-adblock dialog appears, it is dismissed and playback resumes |
 | **Cosmetic backup** | Any leftover ad containers are hidden |
 
+## Spotify web player
+
+New in v1.1: a separate Spotify module inside the same extension, with its own switch.
+
+| Layer | What it does |
+|---|---|
+| **Empty answers** | Spotify's ad-decision requests get a successful but empty reply, so the player sees "no ad available" instead of a failure it could flag |
+| **Safety net** | If an audio ad still starts, it is muted and fast-forwarded, and sound returns with the music |
+| **Cosmetic** | Home-page takeovers and ad banners are hidden |
+
+Both modules share one stealth layer, so every hook looks like untouched browser code.
+
 ## Platforms
 
 | Where | How |
 |---|---|
-| Chrome, Opera GX, Edge, Brave | Manifest V3 browser extension with a popup (on/off switch and live counters) |
+| Chrome, Opera GX, Edge, Brave | Manifest V3 extension for YouTube and the Spotify web player, with a popup (per-site switches and live counters) |
 | Android | Same engine as a userscript in Firefox + Violentmonkey |
 | iPhone / iPad | Same engine as a userscript in Safari via the Userscripts app |
 
@@ -44,7 +56,7 @@ the same protection.
 
 ## Screenshots
 
-**Extension popup**
+**Extension popup** (v1.0, before the Spotify section was added)
 
 <img src="screenshots/popup.png" width="352" alt="YT Shield popup showing counters">
 
@@ -67,7 +79,8 @@ Tested automatically against live YouTube:
 - **With the extension:** no ad data reached the player, no ad played, no warning appeared,
   and every video played normally. In-app navigation and search results were also ad-free.
 - **Mobile userscript:** no ads on the mobile YouTube site.
-- **Result:** 15 of 15 live checks and 7 of 7 unit tests passed.
+- **Result:** 15 of 15 live checks passed, and 14 of 14 unit tests (YouTube and Spotify engines).
+- **Spotify module:** unit-tested; live testing on a free Spotify account is in progress.
 
 ## Built with
 
