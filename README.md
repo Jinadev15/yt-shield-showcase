@@ -50,6 +50,7 @@ Both modules share one stealth layer, so every hook looks like untouched browser
 | Chrome, Opera GX, Edge, Brave | Manifest V3 extension for YouTube and the Spotify web player, with a popup (per-site switches and live counters) |
 | Android | Same engine as a userscript in Firefox + Violentmonkey |
 | iPhone / iPad | Same engine as a userscript in Safari via the Userscripts app |
+| Safari on Mac | YouTube and Spotify userscripts via the free Userscripts app, shipped as a ready-to-send package with an install guide |
 
 One shared engine is built into both the extension and the userscript, so every platform gets
 the same protection.
