@@ -27,7 +27,9 @@ it could detect.
 |---|---|
 | **Data pruning** | Strips video ad breaks plus feed, search and Shorts promotions from YouTube's page data and API responses |
 | **Stealth** | The few browser functions it hooks still look like untouched built-in code to anything that inspects them |
-| **Safety net** | If an ad ever gets through, it is muted, played at 16× and skipped automatically |
+| **Mid-roll ads** | Ads fetched halfway through long videos are stripped the same way as pre-rolls |
+| **Safety net** | If an ad ever starts, it is hidden behind a placeholder, muted and skipped; even ads stitched into the video stream itself are stepped through |
+| **Sponsor segments** | Creator-read sponsorships inside videos are skipped using the community SponsorBlock database, privately (hash-prefix lookup) |
 | **Warning removal** | If the anti-adblock dialog appears, it is dismissed and playback resumes |
 | **Cosmetic backup** | Any leftover ad containers are hidden |
 
@@ -80,7 +82,9 @@ Tested automatically against live YouTube:
 - **With the extension:** no ad data reached the player, no ad played, no warning appeared,
   and every video played normally. In-app navigation and search results were also ad-free.
 - **Mobile userscript:** no ads on the mobile YouTube site.
-- **Result:** 15 of 15 live checks passed, and 14 of 14 unit tests (YouTube and Spotify engines).
+- **Safety net:** with data stripping turned off on purpose, real YouTube ads were hidden, muted and gone in under a second.
+- **Sponsor skipping:** a real sponsor segment was jumped over automatically.
+- **Result:** 19 of 19 live checks and 20 of 20 unit tests passed (YouTube and Spotify engines).
 - **Spotify module:** unit-tested; live testing on a free Spotify account is in progress.
 
 ## Built with
