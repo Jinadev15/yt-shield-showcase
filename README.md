@@ -59,12 +59,14 @@ A full Android app with YouTube and Spotify tabs, both ad-free, signed in with y
 | **Safe by design** | Only genuine YouTube / Google / Spotify addresses load in the app; look-alike domains open in the browser |
 | **Offline-friendly** | A clear "Can't reach the page" screen with Try again |
 | **Links open in the app** | Tap any YouTube or Spotify link and pick YT Shield |
-| **Shield tab** | Live counters, sign-in shortcuts, SponsorBlock and background-play switches |
+| **Full-screen apps** | No tab bar: separate YouTube and Spotify home-screen icons, and a small draggable shield button that opens a panel to switch apps and see stats and settings |
+| **Spotify for phones** | The web player is laid out at its minimum width and scaled to the screen, about 20% larger than desktop view |
 
 <p>
+  <img src="screenshots/app-youtube-home.png" width="200" alt="Full-screen YouTube in the app">
   <img src="screenshots/app-youtube-playing.png" width="200" alt="YouTube playing in the app without ads">
   <img src="screenshots/app-spotify.png" width="200" alt="Spotify web player in the app">
-  <img src="screenshots/app-shield.png" width="200" alt="Shield tab with counters and settings">
+  <img src="screenshots/app-shield.png" width="200" alt="Shield panel with app switcher, counters and settings">
   <img src="screenshots/app-google-sign-in.png" width="200" alt="Google sign-in working inside the app">
 </p>
 
