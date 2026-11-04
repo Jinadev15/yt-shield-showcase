@@ -54,7 +54,10 @@ A full Android app with YouTube and Spotify tabs, both ad-free, signed in with y
 | **Your own accounts** | Built on Mozilla's GeckoView engine, so Google and Spotify sign-in work. Android's built-in WebView is refused by Google, so it isn't used |
 | **Same ad protection** | The extension's ad engines run inside the app as a built-in extension: one engine, every platform |
 | **Spotify plays fully** | Copy-protected (Widevine) playback is supported |
-| **Background play** | Keeps playing with the screen off, with lock-screen and notification media controls |
+| **Background play** | Keeps playing with the screen off, with lock-screen and notification media controls and a seek bar |
+| **Plays nicely** | Pauses for calls and other apps' audio and resumes after, pauses when headphones are unplugged |
+| **Safe by design** | Only genuine YouTube / Google / Spotify addresses load in the app; look-alike domains open in the browser |
+| **Offline-friendly** | A clear "Can't reach the page" screen with Try again |
 | **Links open in the app** | Tap any YouTube or Spotify link and pick YT Shield |
 | **Shield tab** | Live counters, sign-in shortcuts, SponsorBlock and background-play switches |
 
@@ -105,7 +108,7 @@ Tested automatically against live YouTube:
 - **Safety net:** with data stripping turned off on purpose, real YouTube ads were hidden, muted and gone in under a second.
 - **Sponsor skipping:** a real sponsor segment was jumped over automatically.
 - **Result:** 19 of 19 live checks and 20 of 20 unit tests passed (YouTube and Spotify engines).
-- **Android app (on an emulator):** inside the app no ad data reached YouTube's player, the hooked browser functions still looked built-in, playback continued with the screen off, Widevine copy protection was available to Spotify, and Google's sign-in page loaded normally.
+- **Android app (on an emulator):** inside the app no ad data reached YouTube's player, the hooked browser functions still looked built-in, playback continued with the screen off, Widevine copy protection was available to Spotify, and Google's sign-in page loaded normally. Sponsor segments were skipped inside the app, look-alike links were refused, the keyboard never covered fields, and playback survived tab switches and the screen being recreated.
 - **Spotify module:** unit-tested; live testing on a free Spotify account is in progress.
 
 ## Built with
