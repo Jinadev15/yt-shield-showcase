@@ -45,12 +45,32 @@ New in v1.1: a separate Spotify module inside the same extension, with its own s
 
 Both modules share one stealth layer, so every hook looks like untouched browser code.
 
+## Android app
+
+A full Android app with YouTube and Spotify tabs, both ad-free, signed in with your own accounts.
+
+| Feature | How |
+|---|---|
+| **Your own accounts** | Built on Mozilla's GeckoView engine, so Google and Spotify sign-in work. Android's built-in WebView is refused by Google, so it isn't used |
+| **Same ad protection** | The extension's ad engines run inside the app as a built-in extension: one engine, every platform |
+| **Spotify plays fully** | Copy-protected (Widevine) playback is supported |
+| **Background play** | Keeps playing with the screen off, with lock-screen and notification media controls |
+| **Links open in the app** | Tap any YouTube or Spotify link and pick YT Shield |
+| **Shield tab** | Live counters, sign-in shortcuts, SponsorBlock and background-play switches |
+
+<p>
+  <img src="screenshots/app-youtube-playing.png" width="200" alt="YouTube playing in the app without ads">
+  <img src="screenshots/app-spotify.png" width="200" alt="Spotify web player in the app">
+  <img src="screenshots/app-shield.png" width="200" alt="Shield tab with counters and settings">
+  <img src="screenshots/app-google-sign-in.png" width="200" alt="Google sign-in working inside the app">
+</p>
+
 ## Platforms
 
 | Where | How |
 |---|---|
 | Chrome, Opera GX, Edge, Brave | Manifest V3 extension for YouTube and the Spotify web player, with a popup (per-site switches and live counters) |
-| Android | Same engine as a userscript in Firefox + Violentmonkey |
+| Android | The YT Shield app (YouTube + Spotify), or the userscript in Firefox + Violentmonkey |
 | iPhone / iPad | Same engine as a userscript in Safari via the Userscripts app |
 | Safari on Mac | YouTube and Spotify userscripts via the free Userscripts app, shipped as a ready-to-send package with an install guide |
 
@@ -85,11 +105,12 @@ Tested automatically against live YouTube:
 - **Safety net:** with data stripping turned off on purpose, real YouTube ads were hidden, muted and gone in under a second.
 - **Sponsor skipping:** a real sponsor segment was jumped over automatically.
 - **Result:** 19 of 19 live checks and 20 of 20 unit tests passed (YouTube and Spotify engines).
+- **Android app (on an emulator):** inside the app no ad data reached YouTube's player, the hooked browser functions still looked built-in, playback continued with the screen off, Widevine copy protection was available to Spotify, and Google's sign-in page loaded normally.
 - **Spotify module:** unit-tested; live testing on a free Spotify account is in progress.
 
 ## Built with
 
-JavaScript · Chrome Extensions Manifest V3 · Userscripts · Node.js test runner · Playwright
+JavaScript · Kotlin · GeckoView · Chrome Extensions Manifest V3 · WebExtensions · Userscripts · Node.js test runner · Playwright
 
 ---
 
