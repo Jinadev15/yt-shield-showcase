@@ -60,7 +60,8 @@ A full Android app with YouTube and Spotify tabs, both ad-free, signed in with y
 | **Offline-friendly** | A clear "Can't reach the page" screen with Try again |
 | **Links open in the app** | Tap any YouTube or Spotify link and pick YT Shield |
 | **Full-screen apps** | No tab bar: separate YouTube and Spotify home-screen icons, and a small draggable shield button that opens a panel to switch apps and see stats and settings |
-| **Mini player** | Leaving a playing video (Back or swipe down) keeps it playing in a small window above YouTube's tab bar; tap to return to the full video |
+| **YouTube-app gestures** | Drag the video down and it shrinks with your finger into a mini player; swipe up for full screen; page scrolling stays normal |
+| **Mini player** | Drag it anywhere, drop it on ✕ to close, tap to return to the full video instantly at the same moment |
 | **Spotify for phones** | The web player is laid out at its minimum width and scaled to the screen, about 20% larger than desktop view |
 
 <p>
@@ -112,7 +113,7 @@ Tested automatically against live YouTube:
 - **Safety net:** with data stripping turned off on purpose, real YouTube ads were hidden, muted and gone in under a second.
 - **Sponsor skipping:** a real sponsor segment was jumped over automatically.
 - **Result:** 19 of 19 live checks and 20 of 20 unit tests passed (YouTube and Spotify engines).
-- **Android app (on an emulator):** inside the app no ad data reached YouTube's player, the hooked browser functions still looked built-in, playback continued with the screen off, Widevine copy protection was available to Spotify, and Google's sign-in page loaded normally. Sponsor segments were skipped inside the app, look-alike links were refused, the keyboard never covered fields, and playback survived tab switches and the screen being recreated.
+- **Android app (on an emulator):** inside the app no ad data reached YouTube's player, the hooked browser functions still looked built-in, playback continued with the screen off, Widevine copy protection was available to Spotify, and Google's sign-in page loaded normally. A 12-step gesture walkthrough (drag-to-minimise, swipe-up full screen, full-screen top buttons and edge swipes, mini player drag / close / resume, Back, shield panel) passes on the emulator. Sponsor segments were skipped inside the app, look-alike links were refused, the keyboard never covered fields, and playback survived tab switches and the screen being recreated.
 - **Spotify module:** unit-tested; live testing on a free Spotify account is in progress.
 
 ## Built with
