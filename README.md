@@ -40,8 +40,8 @@ New in v1.1: a separate Spotify module inside the same extension, with its own s
 | Layer | What it does |
 |---|---|
 | **Empty answers** | Spotify's ad-decision requests get a successful but empty reply, so the player sees "no ad available" instead of a failure it could flag |
-| **Safety net** | If an audio ad still starts, it is muted and fast-forwarded, and sound returns with the music |
-| **Cosmetic** | Home-page takeovers and ad banners are hidden |
+| **Safety net** | If an audio ad still starts, it is muted and fast-forwarded, and sound returns with the music. If the player is left paused after the ad, the music is resumed |
+| **Cosmetic** | Home-page takeovers, ad banners, Premium upsells and "Install App" prompts are hidden |
 
 Both modules share one stealth layer, so every hook looks like untouched browser code.
 
@@ -82,8 +82,8 @@ A full Android app with YouTube and Spotify tabs, both ad-free, signed in with y
 | iPhone / iPad | Same engine as a userscript in Safari via the Userscripts app |
 | Safari on Mac | YouTube and Spotify userscripts via the free Userscripts app, shipped as a ready-to-send package with an install guide |
 
-One shared engine is built into both the extension and the userscript, so every platform gets
-the same protection.
+One shared engine and one shared set of hiding rules are built into the extension, the userscripts
+and the app, so every platform gets the same protection.
 
 ## Screenshots
 
@@ -112,7 +112,7 @@ Tested automatically against live YouTube:
 - **Mobile userscript:** no ads on the mobile YouTube site.
 - **Safety net:** with data stripping turned off on purpose, real YouTube ads were hidden, muted and gone in under a second.
 - **Sponsor skipping:** a real sponsor segment was jumped over automatically.
-- **Result:** 19 of 19 live checks and 20 of 20 unit tests passed (YouTube and Spotify engines).
+- **Result:** 19 of 19 live checks and 23 of 23 unit tests passed (YouTube and Spotify engines).
 - **Android app (on an emulator):** inside the app no ad data reached YouTube's player, the hooked browser functions still looked built-in, playback continued with the screen off, Widevine copy protection was available to Spotify, and Google's sign-in page loaded normally. A 12-step gesture walkthrough (drag-to-minimise, swipe-up full screen, full-screen top buttons and edge swipes, mini player drag / close / resume, Back, shield panel) passes on the emulator. Sponsor segments were skipped inside the app, look-alike links were refused, the keyboard never covered fields, and playback survived tab switches and the screen being recreated.
 - **Spotify module:** unit-tested; live testing on a free Spotify account is in progress.
 
