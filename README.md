@@ -28,7 +28,8 @@ it could detect.
 | **Data pruning** | Strips video ad breaks plus feed, search and Shorts promotions from YouTube's page data and API responses |
 | **Stealth** | The few browser functions it hooks still look like untouched built-in code to anything that inspects them |
 | **Mid-roll ads** | Ads fetched halfway through long videos are stripped the same way as pre-rolls |
-| **Safety net** | If an ad ever starts, it is hidden behind a placeholder, muted and skipped; even ads stitched into the video stream itself are stepped through |
+| **Safety net** | If an ad ever starts, it is hidden behind plain black, muted and skipped; even ads stitched into the video stream itself are stepped through |
+| **No start-up pause** | The one piece of ad data YouTube penalises removing (it then holds the video 6-13 s at 0:00) is left alone, so videos start in about 2 s |
 | **Sponsor segments** | Creator-read sponsorships inside videos are skipped using the community SponsorBlock database, privately (hash-prefix lookup) |
 | **Warning removal** | If the anti-adblock dialog appears, it is dismissed and playback resumes |
 | **Cosmetic backup** | Any leftover ad containers are hidden |
