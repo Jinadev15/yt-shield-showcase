@@ -55,7 +55,7 @@ A full Android app with YouTube and Spotify tabs, both ad-free, signed in with y
 | **Your own accounts** | Built on Mozilla's GeckoView engine, so Google and Spotify sign-in work. Android's built-in WebView is refused by Google, so it isn't used |
 | **Same ad protection** | The extension's ad engines run inside the app as a built-in extension: one engine, every platform |
 | **Spotify plays fully** | Copy-protected (Widevine) playback is supported |
-| **Background play** | Keeps playing with the screen off, with lock-screen and notification media controls and a seek bar |
+| **Background play** | Keeps playing with the screen off, with lock-screen and notification media controls and a seek bar; stays awake between songs so the next one always plays |
 | **Plays nicely** | Pauses for calls and other apps' audio and resumes after, pauses when headphones are unplugged |
 | **Safe by design** | Only genuine YouTube / Google / Spotify addresses load in the app; look-alike domains open in the browser |
 | **Offline-friendly** | A clear "Can't reach the page" screen with Try again |
